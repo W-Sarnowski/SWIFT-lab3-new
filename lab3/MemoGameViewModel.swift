@@ -2,8 +2,8 @@ import SwiftUI
 
 class MemoGameViewModel: ObservableObject {
     static var content1 = ["😁", "🥰", "💩", "😰", "🤬"]
-    static var content2 = ["😢", "💀", "🤯"]
-    static var content3 = ["😇", "🥹", "🥶", "🤐"]
+    static var content2 = ["🕸️","🧙‍♀️","🙀","👹","😱"]
+    static var content3 = ["😇", "🥹", "🥶", "🤐", "🕷️"]
     public static var content = content1
     public static var color = Color.blue
     
@@ -21,6 +21,10 @@ class MemoGameViewModel: ObservableObject {
     
     var cards: Array<MemoGameModel<String>.Card> {
         return model.cards
+    }
+
+    var score: Int {
+        return model.score
     }
     
     func shuffle() {

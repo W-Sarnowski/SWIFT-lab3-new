@@ -2,6 +2,7 @@ import Foundation
 
 struct MemoGameModel<CardContent> where CardContent: Equatable {
     private(set) var cards: Array<Card>
+    private(set) var score = 0
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = []
@@ -19,29 +20,37 @@ struct MemoGameModel<CardContent> where CardContent: Equatable {
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             let faceUpCards = cards.indices.filter { index in
-                cards[index].faceUp
+                cards[index].isFaceUp
             }
             return faceUpCards.count == 1 ? faceUpCards.first : nil
         }
         set {
             return cards.indices.forEach {
-                cards[$0].faceUp = (newValue == $0)
+                cards[$0].isFaceUp = (newValue == $0)
             }
         }
     }
     
     mutating func choose(_ card: Card) {
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
-            if (!cards[chosenIndex].faceUp && !cards[chosenIndex].matched) {
+            if (!cards[chosenIndex].isFaceUp && !cards[chosenIndex].matched) {
                 if let potentialIndex = indexOfOneAndOnlyFaceUpCard {
                     if (cards[chosenIndex].content == cards[potentialIndex].content) {
                         cards[chosenIndex].matched = true
                         cards[potentialIndex].matched = true
+                        score += 2
+                    } else {
+                        if cards[chosenIndex].hasBeenSeen {
+                            score -= 1
+                        }
+                        if cards[potentialIndex].hasBeenSeen {
+                            score -= 1
+                        }
                     }
                 } else {
                     indexOfOneAndOnlyFaceUpCard = chosenIndex
                 }
-                cards[chosenIndex].faceUp = true
+                cards[chosenIndex].isFaceUp = true
             }
         }
     }
@@ -51,8 +60,17 @@ struct MemoGameModel<CardContent> where CardContent: Equatable {
             return lhs.isFaceUp == rhs.isFaceUp && lhs.isMatched == rhs.isMatched && lhs.content == rhs.content
         }*/
     
-        var faceUp = false
+        var isFaceUp = false { 
+            didSet {
+                if oldValue && !isFaceUp {
+                    hasBeenSeen = true
+                }
+            }
+        }
         var matched = false
+
+        var hasBeenSeen = false
+
         var content: CardContent
         var id: String
     }

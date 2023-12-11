@@ -15,9 +15,11 @@ struct CardView: View {
                         .font(.system(size: 200))
                         .minimumScaleFactor(0.01)
                         .aspectRatio(contentMode: .fit)
+                        .rotationEffect(.degrees(card.isMatched ? 360 : 0))
+                        .animation(.easeInOut(duration: 2), value: card.isMatched)
                 )
         }
-        .modifier(Cardify(isFaceUp: card.isFaceUp))
-        .opacity(card.faceUp || !card.matched ? 1 : 0)
+        .cardify(isFaceUp: card.isFaceUp)
+        .opacity(card.isFaceUp || !card.matched ? 1 : 0)
 }
 
