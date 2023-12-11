@@ -15,7 +15,9 @@ struct ContentView: View {
             }
             
             Button("🔀") {
-                viewModel.shuffle()
+                withAnimation {
+                    viewModel.shuffle()
+                }
             }
             .padding()
             
