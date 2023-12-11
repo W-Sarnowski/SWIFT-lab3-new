@@ -8,21 +8,16 @@ struct CardView: View {
     }
     
     var body: some View {
-        ZStack {
-            Group {
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(.white)
-                    .strokeBorder(lineWidth: 2)
-                Text(card.content)
-                    .font(.system(size: 200))
-                    .minimumScaleFactor(0.01)
-                    .aspectRatio(contentMode: .fit)
-            }
-            .opacity(card.faceUp ? 1 : 0)
-            RoundedRectangle(cornerRadius: 12)
-                .fill()
-                .opacity(card.faceUp ? 0 : 1)
+            CirclePart(endAngle: .degrees(240))
+                .opacity(0.3)
+                .overlay(
+                    Text(card.content)
+                        .font(.system(size: 200))
+                        .minimumScaleFactor(0.01)
+                        .aspectRatio(contentMode: .fit)
+                )
         }
+        .modifier(Cardify(isFaceUp: card.isFaceUp))
         .opacity(card.faceUp || !card.matched ? 1 : 0)
-    }
 }
+
