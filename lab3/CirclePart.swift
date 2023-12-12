@@ -12,8 +12,8 @@ struct CirclePart: Shape {
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
         let start = CGPoint(
-            x: center.x + radius * cos(startAngle.radians),
-            y: center.y + radius * sin(startAngle.radians)
+            x: center.x,
+            y: center.y
         )
         
         var p = Path()

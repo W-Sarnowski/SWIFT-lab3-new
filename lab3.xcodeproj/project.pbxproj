@@ -17,8 +17,10 @@
 		3FB99A4D2AD5456300DCDA30 /* lab3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB99A4C2AD5456300DCDA30 /* lab3UITests.swift */; };
 		3FB99A4F2AD5456300DCDA30 /* lab3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB99A4E2AD5456300DCDA30 /* lab3UITestsLaunchTests.swift */; };
 		3FB99A5C2AD545CC00DCDA30 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB99A5B2AD545CC00DCDA30 /* CardView.swift */; };
-		3FE3E89E2B15EC180040691A /* CirclePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3E89D2B15EC180040691A /* CirclePart.swift */; };
 		3FE52D062ADE7DBB00EFB437 /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE52D052ADE7DBB00EFB437 /* ThemeButtonView.swift */; };
+		3FF795E42B2858FE0008A51F /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF795E32B2858FE0008A51F /* Cardify.swift */; };
+		3FF795E62B2859050008A51F /* CirclePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF795E52B2859050008A51F /* CirclePart.swift */; };
+		3FF795E82B2859210008A51F /* FlyingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF795E72B2859210008A51F /* FlyingNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,10 @@
 		3FB99A4C2AD5456300DCDA30 /* lab3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab3UITests.swift; sourceTree = "<group>"; };
 		3FB99A4E2AD5456300DCDA30 /* lab3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3FB99A5B2AD545CC00DCDA30 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		3FE3E89D2B15EC180040691A /* CirclePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePart.swift; sourceTree = "<group>"; };
 		3FE52D052ADE7DBB00EFB437 /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
+		3FF795E32B2858FE0008A51F /* Cardify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		3FF795E52B2859050008A51F /* CirclePart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclePart.swift; sourceTree = "<group>"; };
+		3FF795E72B2859210008A51F /* FlyingNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyingNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,6 @@
 		3FB99A252AD5456200DCDA30 = {
 			isa = PBXGroup;
 			children = (
-				3FE3E89D2B15EC180040691A /* CirclePart.swift */,
 				3FB99A302AD5456200DCDA30 /* lab3 */,
 				3FB99A412AD5456300DCDA30 /* lab3Tests */,
 				3FB99A4B2AD5456300DCDA30 /* lab3UITests */,
@@ -110,6 +113,9 @@
 				3FB99A352AD5456300DCDA30 /* Assets.xcassets */,
 				3FB99A372AD5456300DCDA30 /* Preview Content */,
 				3FB99A5B2AD545CC00DCDA30 /* CardView.swift */,
+				3FF795E32B2858FE0008A51F /* Cardify.swift */,
+				3FF795E52B2859050008A51F /* CirclePart.swift */,
+				3FF795E72B2859210008A51F /* FlyingNumber.swift */,
 				3FE52D052ADE7DBB00EFB437 /* ThemeButtonView.swift */,
 				3F0EE6ED2AFA31EE008DAD69 /* MemoGameModel.swift */,
 				3F0EE6EF2AFA3868008DAD69 /* MemoGameViewModel.swift */,
@@ -273,9 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0EE6EE2AFA31EE008DAD69 /* MemoGameModel.swift in Sources */,
+				3FF795E42B2858FE0008A51F /* Cardify.swift in Sources */,
+				3FF795E82B2859210008A51F /* FlyingNumber.swift in Sources */,
 				3FB99A342AD5456200DCDA30 /* ContentView.swift in Sources */,
-				3FE3E89E2B15EC180040691A /* CirclePart.swift in Sources */,
 				3F0EE6F02AFA3868008DAD69 /* MemoGameViewModel.swift in Sources */,
+				3FF795E62B2859050008A51F /* CirclePart.swift in Sources */,
 				3FB99A5C2AD545CC00DCDA30 /* CardView.swift in Sources */,
 				3FE52D062ADE7DBB00EFB437 /* ThemeButtonView.swift in Sources */,
 				3FB99A322AD5456200DCDA30 /* lab3App.swift in Sources */,

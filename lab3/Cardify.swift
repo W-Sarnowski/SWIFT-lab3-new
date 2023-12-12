@@ -12,7 +12,7 @@ struct Cardify: ViewModifier, Animatable {
         rotation = isFaceUp ? 0 : 180
     }
 
-    let isFaceUp: Bool {
+    var isFaceUp: Bool {
         rotation < 90
     }
 
@@ -33,7 +33,7 @@ struct Cardify: ViewModifier, Animatable {
             base.fill()
                 .opacity(isFaceUp ? 0 : 1)
         }
-        .rotation3dEffect(.degrees(rotation), axis: (0,1,0))
+        .rotation3DEffect(.degrees(rotation), axis: (0,1,0))
     }
     
     private struct Constants {

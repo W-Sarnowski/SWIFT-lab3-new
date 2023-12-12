@@ -45,13 +45,14 @@ struct ContentView: View {
                             lastScoreChange = (scoreChange, causedByCardId: card.id)
                         }
                     }
+                    .overlay(FlyingNumber(number: scoreChange(causedBy: card)))
             }
         }
     }
 
     @State private var lastScoreChange = (0, causedByCardId: "")
     
-    private func scoreChange(causedBy card: Card) -> Int {
+    private func scoreChange(causedBy card: MemoGameModel<String>.Card) -> Int {
         let (amount, id) = lastScoreChange
         return card.id == id ? amount : 0
     }

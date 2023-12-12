@@ -8,18 +8,18 @@ struct CardView: View {
     }
     
     var body: some View {
-            CirclePart(endAngle: .degrees(240))
-                .opacity(0.3)
-                .overlay(
-                    Text(card.content)
-                        .font(.system(size: 200))
-                        .minimumScaleFactor(0.01)
-                        .aspectRatio(contentMode: .fit)
-                        .rotationEffect(.degrees(card.isMatched ? 360 : 0))
-                        .animation(.easeInOut(duration: 2), value: card.isMatched)
-                )
-        }
-        .cardify(isFaceUp: card.isFaceUp)
-        .opacity(card.isFaceUp || !card.matched ? 1 : 0)
+        CirclePart(endAngle: .degrees(240))
+            .opacity(0.3)
+            .overlay(
+                Text(card.content)
+                    .font(.system(size: 200))
+                    .minimumScaleFactor(0.01)
+                    .aspectRatio(contentMode: .fit)
+                    .rotationEffect(.degrees(card.matched ? 360 : 0))
+                    .animation(.linear(duration: 1), value: card.matched)
+            )
+            .cardify(isFaceUp: card.isFaceUp)
+            .opacity(card.isFaceUp || !card.matched ? 1 : 0)
+    }
 }
 
