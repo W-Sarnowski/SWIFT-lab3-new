@@ -8,8 +8,8 @@ struct MemoGameModel<CardContent> where CardContent: Equatable {
         cards = []
         for pair in 0 ..< max(2, numberOfPairsOfCards) {
             let cardContent = cardContentFactory(pair)
-            cards.append(Card(content: cardContent, id: "\(pair + 1)a"))
-            cards.append(Card(content: cardContent, id: "\(pair + 1)b"))
+            cards.append(Card(content: cardContent, id: "\(UUID())a"))
+            cards.append(Card(content: cardContent, id: "\(UUID())b"))
         }
     }
     
@@ -38,7 +38,7 @@ struct MemoGameModel<CardContent> where CardContent: Equatable {
                     if (cards[chosenIndex].content == cards[potentialIndex].content) {
                         cards[chosenIndex].matched = true
                         cards[potentialIndex].matched = true
-                        score += 2
+                        score += 4
                     } else {
                         if cards[chosenIndex].hasBeenSeen {
                             score -= 1

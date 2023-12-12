@@ -16,7 +16,7 @@ struct CardView: View {
                     .minimumScaleFactor(0.01)
                     .aspectRatio(contentMode: .fit)
                     .rotationEffect(.degrees(card.matched ? 360 : 0))
-                    .animation(.linear(duration: 1), value: card.matched)
+                    .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: card.matched)
             )
             .cardify(isFaceUp: card.isFaceUp)
             .opacity(card.isFaceUp || !card.matched ? 1 : 0)
